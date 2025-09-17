@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KJ Business Consulting & Accounting — Fractional Controller for Restaurants</title>
+  <meta name="description" content="Restaurant-focused fractional controller services: weekly P&Ls, period-end close, R365/Toast/7shifts/QuickBooks systems, COGS & labor controls, cash management, SOPs, and board-ready reporting." />
+  <meta id="themeColorMeta" name="theme-color" content="#111827" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ===== THEME TOKENS ===== */
+    :root{
+      --bg:#0b1220;        /* deep navy */
+      --bg-grad:#0d172a;   /* gradient tail */
+      --fg:#e5e7eb;        /* light text */
+      --muted:#94a3b8;     /* slate */
+      --brand:#22c55e;     /* green */
+      --brand-2:#38bdf8;   /* sky */
+      --brand-3:#f472b6;   /* pink */
+      --brand-4:#f59e0b;   /* amber */
+      --card:#0f172a;      /* slate-900 */
+      --border: rgba(148,163,184,.25);
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+      --radius: 18px;
+    }
+    /* Light theme overrides */
+    [data-theme="light"]{
+      --bg:#f8fafc;        /* zinc-50 */
+      --bg-grad:#ffffff;   /* pure white tail */
+      --fg:#0f172a;        /* slate-900 text */
+      --muted:#475569;     /* slate-600 */
+      --card:#ffffff;      /* white cards */
+      --border: rgba(15,23,42,.12);
+      --shadow: 0 8px 28px rgba(2,6,23,.08);
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg) 0%, var(--bg) 40%, var(--bg-grad) 100%);color:var(--fg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;}
+    a{color:var(--brand)}
+    .container{max-width:1160px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(8px);background:rgba(8,13,24,.6);border-bottom:1px solid var(--border);z-index:10}
+    [data-theme="light"] header{background:rgba(248,250,252,.7)}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo svg{width:40px;height:40px;filter:drop-shadow(var(--shadow));}
+    .logo span{font-weight:800;letter-spacing:.2px;color:var(--fg)}
+    .nav-right{display:flex;align-items:center;gap:12px}
+    .nav-links a{color:var(--fg);text-decoration:none;margin-left:12px;font-weight:500;opacity:.9}
+    .btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2));border:none;color:#08111e;padding:12px 16px;border-radius:14px;font-weight:700;text-decoration:none;box-shadow:var(--shadow)}
+    .btn.secondary{background:transparent;border:1px solid var(--border);color:var(--fg)}
+    .toggle{border:1px solid var(--border);background:transparent;border-radius:999px;padding:8px 10px;color:var(--fg);cursor:pointer}
+    .hero{padding:80px 0 40px;border-bottom:1px solid var(--border)}
+    .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+    .eyebrow{display:inline-block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#051b11;background:linear-gradient(90deg,var(--brand),var(--brand-2));padding:6px 10px;border-radius:999px;margin-bottom:14px}
+    h1{font-size:42px;line-height:1.08;margin:0 0 14px;font-weight:900}
+    h2{font-size:28px;margin:0 0 18px;position:relative;padding-bottom:6px}
+    h2::after{content:"";position:absolute;left:0;bottom:0;width:120px;height:3px;background:linear-gradient(90deg,var(--brand),var(--brand-2),var(--brand-3));border-radius:3px}
+    .sub{font-size:18px;color:var(--muted);margin-bottom:26px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));border:1px solid var(--border);border-radius:var(--radius);padding:18px}
+    [data-theme="light"] .card{background:#ffffff}
+    .card.accent-green{border-color:rgba(34,197,94,.5)}
+    .card.accent-sky{border-color:rgba(56,189,248,.5)}
+    .card.accent-pink{border-color:rgba(244,114,182,.5)}
+    .card.accent-amber{border-color:rgba(245,158,11,.5)}
+    section{padding:64px 0;border-bottom:1px solid var(--border)}
+    .list{margin:0;padding-left:18px;color:var(--muted)}
+    .badge{display:inline-block;border:1px solid var(--border);padding:6px 10px;border-radius:999px;margin:6px 6px 0 0;color:#111827;font-weight:700;font-size:12px}
+    .badge.green{background:rgba(34,197,94,.9)}
+    .badge.sky{background:rgba(56,189,248,.9)}
+    .badge.pink{background:rgba(244,114,182,.9)}
+    .badge.amber{background:rgba(245,158,11,.9)}
+    .chips{margin-top:8px}
+    .note{font-size:12px;color:var(--muted);margin-top:8px}
+    footer{padding:40px 0;color:var(--muted)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    @media (max-width: 980px){
+      .hero{padding:48px 0 24px}
+      .hero-grid{grid-template-columns:1fr}
+      .grid-3,.grid-4{grid-template-columns:1fr}
+    }
+    .stripe{height:6px;background:linear-gradient(90deg,var(--brand),var(--brand-2),var(--brand-3),var(--brand-4));border-radius:999px;margin:28px 0}
+    .transition-all{transition:background-color .25s ease,color .25s ease,border-color .25s ease}
+    body, header, .card{transition:background-color .25s ease,color .25s ease,border-color .25s ease}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="#top" aria-label="KJ Business Consulting & Accounting home">
+          <!-- KJ Monogram Logo -->
+          <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+            <defs>
+              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#22c55e"/>
+                <stop offset="60%" stop-color="#38bdf8"/>
+                <stop offset="100%" stop-color="#f59e0b"/>
+              </linearGradient>
+            </defs>
+            <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#g)"/>
+            <text x="50%" y="52%" text-anchor="middle" dominant-baseline="middle" font-family="Inter, Arial, sans-serif" font-weight="900" font-size="28" fill="#08111e">KJ</text>
+          </svg>
+          <span>KJ Business Consulting & Accounting</span>
+        </a>
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#industries">Restaurants</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#about">About</a>
+            <a href="#contact" class="btn" style="margin-left:6px">Book a Consult</a>
+          </div>
+          <button class="toggle" id="themeToggle" aria-label="Toggle light/dark theme">☀︎ / ☾</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Restaurant-focused • Fractional Controller</span>
+          <h1>The books can wait. People can’t.<br/>But your numbers still need to be right.</h1>
+          <p class="sub">I help multi-location restaurants install bulletproof accounting: weekly P&Ls, disciplined close, COGS and labor control, and board-ready insights.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+            <a class="btn" href="mailto:katrina9870@gmail.com?subject=Consult%20Request&body=Hi%20Katrina,%0A%0AMy%20name%20is%20____.%20Here’s%20what%20I’m%20looking%20for:%0A-%20Locations:%20____%0A-%20Goals:%20____%0A-%20Timeline:%20____%0A%0AThanks!">Email me to book</a>
+            <span class="badge green">Restaurant365</span>
+            <span class="badge sky">Toast</span>
+            <span class="badge amber">7shifts</span>
+            <span class="badge pink">Concur</span>
+            <span class="badge sky">Ramp</span>
+            <span class="badge green">QuickBooks Online</span>
+            <span class="badge amber">QuickBooks Desktop</span>
+          </div>
+          <div class="note">Need admin access help (bank, cards, portals)? I’ll write the requests and drive approvals.</div>
+          <div class="stripe"></div>
+          <div class="grid-3">
+            <div class="card accent-green"><strong>75+</strong><br/>Locations managed</div>
+            <div class="card accent-sky"><strong>≤5 days</strong><br/>Period close</div>
+            <div class="card accent-amber"><strong>2–5%</strong><br/>COGS improvements</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Services</h2>
+      <div class="grid-3">
+        <div class="card accent-green">
+          <h3>Fractional Controller</h3>
+          <p>Own close, consolidate weekly P&Ls, and lead the cadence with MPs/ADs so ops uses the numbers.</p>
+          <ul class="list">
+            <li>5‑day month‑end close</li>
+            <li>Weekly flash: sales, COGS, labor</li>
+            <li>Board‑ready reporting & cash forecasts</li>
+          </ul>
+        </div>
+        <div class="card accent-sky">
+          <h3>Clean‑ups & Turnarounds</h3>
+          <p>Untangle prior periods, rebuild reconciliations, and harden bank/credit card controls.</p>
+          <ul class="list">
+            <li>Multi‑period tie‑outs & variance bridges</li>
+            <li>AP/AR aging remediation & payment plans</li>
+            <li>Sales tax & F&B filings</li>
+          </ul>
+        </div>
+        <div class="card accent-amber">
+          <h3>Systems & SOPs</h3>
+          <p>Stand up R365/Toast/7shifts/**QuickBooks** end‑to‑end with SOPs, videos, and role‑based tasks.</p>
+          <ul class="list">
+            <li>To‑Do checklists by role</li>
+            <li>3P delivery & cash log reconciliations</li>
+            <li>Inventory & recipe COGS governance</li>
+          </ul>
+        </div>
+      </div>
+      <div class="stripe"></div>
+    </section>
+
+    <section id="industries">
+      <h2>Who I Serve</h2>
+      <div class="grid-4">
+        <div class="card accent-green"><h3>Multi‑Unit Operators</h3><p>Central reporting, location scorecards, and accountability.</p></div>
+        <div class="card accent-sky"><h3>Founders & New CFOs</h3><p>Gain control quickly with a zero‑fluff reporting pack.</p></div>
+        <div class="card accent-pink"><h3>Turnarounds</h3><p>Stabilize working capital and rebuild trust with clean numbers.</p></div>
+        <div class="card accent-amber"><h3>PE‑Backed</h3><p>KPI visibility, cash runway, and diligence‑ready artifacts.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>What Clients Say</h2>
+      <div class="grid-3">
+        <div class="card accent-green"><blockquote>“Katrina led our expansion from 12 to 40+ units without losing the narrative in the numbers. Close is faster and cleaner.” — <em>VP Finance, multi‑unit fast‑casual</em></blockquote></div>
+        <div class="card accent-sky"><blockquote>“We finally trust our weekly P&Ls. MPs actually use them in standups now.” — <em>Area Director, Southeast</em></blockquote></div>
+        <div class="card accent-amber"><blockquote>“COGS dropped 2.3 pts in 8 weeks and cash stress eased. Zero chaos.” — <em>Founder/CEO</em></blockquote></div>
+      </div>
+      <div class="stripe"></div>
+    </section>
+
+    <section id="pricing">
+      <h2>Pricing</h2>
+      <div class="grid-3">
+        <div class="card accent-green">
+          <h3>Growth</h3>
+          <p class="sub">4–10 locations • close ≤5 days • ops reviews • systems integration</p>
+          <p><strong>$5,500/mo</strong></p>
+        </div>
+        <div class="card accent-sky">
+          <h3>Scale</h3>
+          <p class="sub">11–25 locations • weekly P&L cadence • KPI dashboards • working‑capital control</p>
+          <p><strong>$9,000+/mo</strong></p>
+        </div>
+        <div class="card accent-amber">
+          <h3>Enterprise</h3>
+          <p class="sub">25–75+ locations • multi‑entity consolidations • PE reporting packs • special projects</p>
+          <p><strong>Custom</strong></p>
+        </div>
+      </div>
+      <p class="sub">Transparent scopes. Fixed monthly fee, defined deliverables. We right‑size to your stage.</p>
+    </section>
+
+    <section id="about">
+      <h2>About Katrina Jaensch</h2>
+      <div class="grid-3">
+        <div class="card accent-green"><h3>Operator‑Grade Accounting</h3><p>I’ve led accounting for multi‑unit restaurants and built processes teams actually follow.</p></div>
+        <div class="card accent-pink"><h3>Process & People</h3><p>Templates, SOPs, and training so your team owns the numbers—without heroics.</p></div>
+        <div class="card accent-sky"><h3>No‑Nonsense</h3><p>Straight talk. Clean reconciliations. Actionable dashboards. That’s the job.</p></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p><strong>Email:</strong> <a href="mailto:katrina9870@gmail.com">katrina9870@gmail.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+17072279336">707‑227‑9336</a></p>
+      <p><strong>Location:</strong> Alachua, Florida (serving clients remotely across the U.S.)</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+        <div>© <span id="year"></span> KJ Business Consulting & Accounting • All rights reserved</div>
+        <div>
+          <a class="btn secondary" href="#top">Back to top ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Year stamp
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle with localStorage persistence
+    const root = document.documentElement; const themeMeta = document.getElementById('themeColorMeta');
+    const toggle = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('kj-theme');
+    // Determine initial theme: saved pref > system pref > dark
+    let initial = saved;
+    if(!initial){
+      const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+      initial = prefersLight ? 'light' : 'dark';
+    }
+    document.documentElement.setAttribute('data-theme', initial);
+    themeMeta && themeMeta.setAttribute('content', initial==='light' ? '#f8fafc' : '#111827');
+    toggle?.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('kj-theme', next);
+      themeMeta && themeMeta.setAttribute('content', next==='light' ? '#f8fafc' : '#111827');
+      toggle.setAttribute('aria-pressed', next==='light');
+    });
+  </script>
+</body>
+</html>
