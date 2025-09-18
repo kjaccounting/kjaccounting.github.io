@@ -17,23 +17,23 @@
     .container{max-width:1100px;margin:0 auto;padding:0 20px}
     header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(8px);background:rgba(248,250,252,.7);border-bottom:1px solid var(--border);z-index:10}
     nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:12px}
-    .nav-left{display:flex;align-items:center;gap:12px}
-    .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
     .logo svg{width:40px;height:40px;filter:drop-shadow(var(--shadow));}
     .logo span{font-weight:800;letter-spacing:.2px}
     .nav-links a{color:var(--fg);text-decoration:none;margin-left:12px;font-weight:500;opacity:.9}
     .btn{display:inline-flex;align-items:center;gap:10px;border:none;color:#08111e;padding:12px 16px;border-radius:14px;font-weight:700;text-decoration:none;box-shadow:var(--shadow);cursor:pointer}
     .btn.book{background:linear-gradient(135deg,var(--brand),var(--brand-2));}
     .btn.email{background:linear-gradient(135deg,var(--brand-3),var(--brand-4));}
-    .toggle{border:1px solid var(--border);background:transparent;border-radius:999px;padding:8px 10px;color:var(--fg);cursor:pointer}
-    .hero{padding:96px 0 48px;border-bottom:1px solid var(--border);text-align:center}
-    .eyebrow{display:inline-block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#051b11;background:linear-gradient(90deg,var(--brand),var(--brand-2));padding:6px 10px;border-radius:999px;margin-bottom:14px}
-    h1{font-size:clamp(28px,3.6vw,36px);line-height:1.15;margin:0 0 12px;font-weight:900}
+    .hero{padding:80px 0 48px;border-bottom:1px solid var(--border);text-align:center}
+    .tagline{display:inline-flex;align-items:center;gap:10px; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#051b11; background:linear-gradient(90deg,var(--brand),var(--brand-2)); padding:8px 12px; border-radius:999px; font-weight:800; box-shadow:var(--shadow)}
+    .hero-ctas{display:flex;gap:12px;justify-content:center;margin:16px 0 28px}
+    h1{font-size:clamp(28px,3.8vw,40px);line-height:1.15;margin:0 0 12px;font-weight:900}
     .sub{font-size:18px;color:var(--muted);margin-bottom:26px;max-width:860px;margin-left:auto;margin-right:auto}
     .badge{display:inline-block;border:1px solid var(--border);padding:6px 10px;border-radius:999px;margin:6px 6px 0 0;color:#111827;font-weight:700;font-size:12px}
     .badge.green{background:rgba(34,197,94,.9)} .badge.sky{background:rgba(56,189,248,.9)} .badge.pink{background:rgba(244,114,182,.9)} .badge.amber{background:rgba(245,158,11,.9)}
     .stripe{height:6px;background:linear-gradient(90deg,var(--brand),var(--brand-2),var(--brand-3),var(--brand-4));border-radius:999px;margin:28px 0}
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
     .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px}
     section{padding:64px 0;border-bottom:1px solid var(--border)}
     footer{padding:24px 0;color:var(--muted)}
@@ -49,28 +49,22 @@
   <header>
     <div class="container">
       <nav>
-        <div class="nav-left">
-          <a class="logo" href="#top" aria-label="KJ Business Consulting & Accounting home">
-            <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
-              <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#22c55e"/><stop offset="60%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#f59e0b"/></linearGradient></defs>
-              <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#g)"/>
-              <text x="50%" y="52%" text-anchor="middle" dominant-baseline="middle" font-family="Inter, Arial, sans-serif" font-weight="900" font-size="28" fill="#08111e">KJ</text>
-            </svg>
-            <span>KJ Business Consulting & Accounting</span>
-          </a>
-          <!-- Email Me moved up beside brand -->
-          <a class="btn email email-cta" href="mailto:kjbusinessconsulting%40gmail.com?subject=Consult%20Request%20%E2%80%94%20KJ%20Business%20Consulting&body=Hi%20Katrina%2C%0A%0AMy%20name%20is%20_____.%20Here%E2%80%99s%20what%20I%E2%80%99m%20looking%20for%3A%0A-%20Accounting%20Software%3A%20_____%0A-%20POS%3A%20_____%0A-%20Locations%3A%20_____%0A-%20States%3A%20_____%0A-%20Goals%3A%20_____%0A%0AThanks%21" data-gmail="https://mail.google.com/mail/?view=cm&fs=1&to=kjbusinessconsulting%40gmail.com&su=Consult%20Request%20%E2%80%94%20KJ%20Business%20Consulting&body=Hi%20Katrina%2C%0A%0AMy%20name%20is%20_____.%20Here%E2%80%99s%20what%20I%E2%80%99m%20looking%20for%3A%0A-%20Accounting%20Software%3A%20_____%0A-%20POS%3A%20_____%0A-%20Locations%3A%20_____%0A-%20States%3A%20_____%0A-%20Goals%3A%20_____%0A%0AThanks%21">Email Me</a>
-        </div>
-        <div class="nav-right">
-          <div class="nav-links">
-            <a href="#services">Services</a>
-            <a href="#operations">Operations</a>
-            <a href="#industries">Restaurants</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#about">About</a>
-          </div>
-          <a class="btn book" href="#contact">Book a Consult</a>
+        <a class="logo" href="#top" aria-label="KJ Business Consulting & Accounting home">
+          <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+            <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#22c55e"/><stop offset="60%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#f59e0b"/></linearGradient></defs>
+            <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#g)"/>
+            <text x="50%" y="52%" text-anchor="middle" dominant-baseline="middle" font-family="Inter, Arial, sans-serif" font-weight="900" font-size="28" fill="#08111e">KJ</text>
+          </svg>
+          <span>KJ Business Consulting & Accounting</span>
+        </a>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#operations">Operations</a>
+          <a href="#industries">Restaurants</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#about">About</a>
+          <a href="#contact" class="btn book" style="margin-left:8px">Book a Consult</a>
         </div>
       </nav>
     </div>
@@ -78,10 +72,13 @@
 
   <main id="top" class="container">
     <section class="hero">
-      <span class="eyebrow">RESTAURANT-FOCUSED • FRACTIONAL CONTROLLER</span>
+      <div class="tagline">RESTAURANT‑FOCUSED • FRACTIONAL CONTROLLER</div>
+      <div class="hero-ctas">
+        <a class="btn book" href="#contact">Book a Consult</a>
+        <a class="btn email email-cta" href="mailto:kjbusinessconsulting%40gmail.com?subject=Consult%20Request%20%E2%80%94%20KJ%20Business%20Consulting&body=Hi%20Katrina%2C%0A%0AMy%20name%20is%20_____.%20Here%E2%80%99s%20what%20I%E2%80%99m%20looking%20for%3A%0A-%20Accounting%20Software%3A%20_____%0A-%20POS%3A%20_____%0A-%20Locations%3A%20_____%0A-%20States%3A%20_____%0A-%20Goals%3A%20_____%0A%0AThanks%21" data-gmail="https://mail.google.com/mail/?view=cm&fs=1&to=kjbusinessconsulting%40gmail.com&su=Consult%20Request%20%E2%80%94%20KJ%20Business%20Consulting&body=Hi%20Katrina%2C%0A%0AMy%20name%20is%20_____.%20Here%E2%80%99s%20what%20I%E2%80%99m%20looking%20for%3A%0A-%20Accounting%20Software%3A%20_____%0A-%20POS%3A%20_____%0A-%20Locations%3A%20_____%0A-%20States%3A%20_____%0A-%20Goals%3A%20_____%0A%0AThanks%21">Email Me</a>
+      </div>
       <h1>The books can wait. People can’t.<br/>But your numbers still need to be right.</h1>
       <p class="sub">I help multi-location restaurants install bulletproof accounting: weekly P&Ls, disciplined close, COGS and labor control, and board-ready insights.</p>
-      <!-- hero buttons removed per request -->
       <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center">
         <span class="badge green">Restaurant365</span>
         <span class="badge sky">Toast</span>
@@ -162,9 +159,65 @@
       <div class="stripe"></div>
     </section>
 
+    <section id="industries">
+      <h2 style="text-align:center;position:relative;padding-bottom:6px">Who I Serve</h2>
+      <div class="grid-4">
+        <div class="card"><h3>Multi-Unit Operators</h3><p>Central reporting, location scorecards, and accountability.</p></div>
+        <div class="card"><h3>Founders & New CFOs</h3><p>Gain control quickly with a zero-fluff reporting pack.</p></div>
+        <div class="card"><h3>Turnarounds</h3><p>Stabilize working capital and rebuild trust with clean numbers.</p></div>
+        <div class="card"><h3>PE-Backed</h3><p>KPI visibility, cash runway, and diligence-ready artifacts.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 style="text-align:center;position:relative;padding-bottom:6px">What Clients Say</h2>
+      <div class="grid-3">
+        <div class="card"><blockquote>“Katrina led our expansion from 12 to 40+ units without losing the narrative in the numbers. Close is faster and cleaner.” — <em>VP Finance, multi-unit fast-casual</em></blockquote></div>
+        <div class="card"><blockquote>“We finally trust our weekly P&Ls. MPs actually use them in standups now.” — <em>Area Director, Southeast</em></blockquote></div>
+        <div class="card"><blockquote>“COGS dropped 2.3 pts in 8 weeks and cash stress eased. Zero chaos.” — <em>Founder/CEO</em></blockquote></div>
+      </div>
+      <div class="stripe"></div>
+    </section>
+
+    <section id="pricing">
+      <h2 style="text-align:center;position:relative;padding-bottom:6px">Simple Pricing</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Starter</h3>
+          <p class="sub">1–3 locations • weekly P&L • basic close • SOP starter kit</p>
+          <p><strong>$2,500/mo</strong></p>
+        </div>
+        <div class="card">
+          <h3>Growth</h3>
+          <p class="sub">4–10 locations • close ≤5 days • ops reviews • systems integration</p>
+          <p><strong>$5,500/mo</strong></p>
+        </div>
+        <div class="card">
+          <h3>Custom</h3>
+          <p class="sub">Tailored scope for multi-location operators</p>
+          <p><strong>Let’s talk</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 style="text-align:center;position:relative;padding-bottom:6px">About Katrina Jaensch</h2>
+      <div class="grid-3">
+        <div class="card"><h3>Operator-Grade Accounting</h3><p>I’ve led accounting for multi-unit restaurants and built processes teams actually follow.</p></div>
+        <div class="card"><h3>Process & People</h3><p>Templates, SOPs, and training so your team owns the numbers—without heroics.</p></div>
+        <div class="card"><h3>No-Nonsense</h3><p>Straight talk. Clean reconciliations. Actionable dashboards. That’s the job.</p></div>
+      </div>
+    </section>
+
     <section id="contact">
       <h2 style="text-align:center;position:relative;padding-bottom:6px">Contact</h2>
-      <p class="note" style="text-align:center">Use the intake form or email me directly.</p>
+      <div style="text-align:center;max-width:720px;margin:0 auto">
+        <p><strong>Email:</strong> <a class="email-cta" href="mailto:kjbusinessconsulting%40gmail.com?subject=Consult%20Request%20%E2%80%94%20KJ%20Business%20Consulting&body=Hi%20Katrina%2C%0A%0AMy%20name%20is%20_____.%20Here%E2%80%99s%20what%20I%E2%80%99m%20looking%20for%3A%0A-%20Accounting%20Software%3A%20_____%0A-%20POS%3A%20_____%0A-%20Locations%3A%20_____%0A-%20States%3A%20_____%0A-%20Goals%3A%20_____%0A%0AThanks%21" data-gmail="https://mail.google.com/mail/?view=cm&fs=1&to=kjbusinessconsulting%40gmail.com&su=Consult%20Request%20%E2%80%94%20KJ%20Business%20Consulting&body=Hi%20Katrina%2C%0A%0AMy%20name%20is%20_____.%20Here%E2%80%99s%20what%20I%E2%80%99m%20looking%20for%3A%0A-%20Accounting%20Software%3A%20_____%0A-%20POS%3A%20_____%0A-%20Locations%3A%20_____%0A-%20States%3A%20_____%0A-%20Goals%3A%20_____%0A%0AThanks%21">kjbusinessconsulting@gmail.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+13523542291">352-354-2291</a></p>
+        <p class="note">Prefer email? Click above to open a prefilled message. Or use the intake form below.</p>
+      </div>
+      <div class="stripe"></div>
+      <h2 style="text-align:center;position:relative;padding-bottom:6px">Intake Form</h2>
       <form action="https://formspree.io/f/xrbawnvv" method="POST" class="intake-form" style="display:grid;gap:14px;max-width:640px;margin:18px auto;text-align:left">
         <label>Accounting Software
           <select name="Accounting Software" required>
@@ -233,7 +286,6 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    // smart email fallback (mailto then Gmail)
     function smartEmail(link) {
       const mailto = link.getAttribute('href');
       const gmail = link.dataset.gmail;
