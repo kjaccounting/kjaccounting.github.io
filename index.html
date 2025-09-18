@@ -11,38 +11,54 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    :root{ --bg:#f8fafc; --bg-grad:#ffffff; --fg:#0f172a; --muted:#475569; --brand:#22c55e; --brand-2:#38bdf8; --brand-3:#f472b6; --brand-4:#f59e0b; --card:#ffffff; --border: rgba(15,23,42,.12); --shadow: 0 8px 28px rgba(2,6,23,.08); --radius: 18px; }
-    *{box-sizing:border-box} html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg) 0%, var(--bg) 40%, var(--bg-grad) 100%);color:var(--fg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;}
-    a{color:var(--fg)}
+    :root{
+      --bg:#fafcff; --bg-grad:#ffffff; --fg:#0f172a; --muted:#475569; --card:#ffffff; --border:rgba(15,23,42,.10);
+      --p-green:#bbf7d0; --p-sky:#bae6fd; --p-pink:#fce7f3; --p-amber:#fed7aa;
+      --corner-size:16px; --radius:18px; --shadow: 0 18px 35px rgba(2,6,23,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg) 0%, var(--bg) 40%, var(--bg-grad) 100%);color:var(--fg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;}
+    a{color:#0ea5e9}
     .container{max-width:1100px;margin:0 auto;padding:0 20px}
-    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(8px);background:rgba(248,250,252,.7);border-bottom:1px solid var(--border);z-index:10}
-    nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:12px}
+    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(8px);background:rgba(248,250,252,.86);border-bottom:1px solid var(--border);z-index:10}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px}
     .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
-    .logo svg{width:40px;height:40px;filter:drop-shadow(var(--shadow));}
+    .logo svg{width:40px;height:40px}
     .logo span{font-weight:800;letter-spacing:.2px}
-    .nav-links a{color:var(--fg);text-decoration:none;margin-left:12px;font-weight:500;opacity:.9}
-    .btn{display:inline-flex;align-items:center;gap:10px;border:none;color:#08111e;padding:12px 16px;border-radius:14px;font-weight:700;text-decoration:none;box-shadow:var(--shadow);cursor:pointer}
-    .btn.book{background:linear-gradient(135deg,var(--brand),var(--brand-2));}
-    .btn.email{background:linear-gradient(135deg,var(--brand-3),var(--brand-4));}
-    .hero{padding:80px 0 48px;border-bottom:1px solid var(--border);text-align:center}
-    .tagline{display:inline-flex;align-items:center;gap:10px; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#051b11; background:linear-gradient(90deg,var(--brand),var(--brand-2)); padding:8px 12px; border-radius:999px; font-weight:800; box-shadow:var(--shadow)}
-    .hero-ctas{display:flex;gap:12px;justify-content:center;margin:16px 0 28px}
-    h1{font-size:clamp(28px,3.8vw,40px);line-height:1.15;margin:0 0 12px;font-weight:900}
+    .nav-links a{color:var(--fg);text-decoration:none;margin-left:12px;font-weight:600;opacity:.9}
+    .btn{display:inline-flex;align-items:center;gap:10px;border:none;color:#0f172a;padding:12px 16px;border-radius:14px;font-weight:800;text-decoration:none;box-shadow:var(--shadow);cursor:pointer}
+    .btn.book{background:linear-gradient(135deg,var(--p-green),var(--p-sky));}
+    .btn.email{background:linear-gradient(135deg,var(--p-pink),var(--p-amber));}
+    .hero{padding:72px 0 40px;border-bottom:1px solid var(--border);text-align:center}
+    .tagline{display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#0f172a;background:linear-gradient(90deg,var(--p-pink),var(--p-amber));padding:10px 14px;border-radius:999px;font-weight:900;border:1px solid rgba(15,23,42,.08);box-shadow:var(--shadow);}
+    .hero-ctas{display:flex;gap:12px;justify-content:center;margin:18px 0 28px}
+    h1{font-size:clamp(30px,4vw,44px);line-height:1.15;margin:0 0 12px;font-weight:900}
     .sub{font-size:18px;color:var(--muted);margin-bottom:26px;max-width:860px;margin-left:auto;margin-right:auto}
-    .badge{display:inline-block;border:1px solid var(--border);padding:6px 10px;border-radius:999px;margin:6px 6px 0 0;color:#111827;font-weight:700;font-size:12px}
-    .badge.green{background:rgba(34,197,94,.9)} .badge.sky{background:rgba(56,189,248,.9)} .badge.pink{background:rgba(244,114,182,.9)} .badge.amber{background:rgba(245,158,11,.9)}
-    .stripe{height:6px;background:linear-gradient(90deg,var(--brand),var(--brand-2),var(--brand-3),var(--brand-4));border-radius:999px;margin:28px 0}
+    .stripe{height:6px;background:linear-gradient(90deg,var(--p-green),var(--p-sky),var(--p-pink),var(--p-amber));border-radius:999px;margin:28px 0}
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px}
-    section{padding:64px 0;border-bottom:1px solid var(--border)}
-    footer{padding:24px 0;color:var(--muted)}
-    .footer-grid{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px}
-    .footer-right{display:flex;gap:10px;justify-self:end}
-    .intake-form input, .intake-form select, .intake-form textarea{padding:12px;border-radius:12px;border:1px solid var(--border);background:var(--card);color:var(--fg);width:100%}
-    .intake-form fieldset{border:1px solid var(--border);border-radius:12px;padding:12px}
-    .intake-form legend{padding:0 6px;color:var(--muted)}
+    @media (max-width: 980px){ .grid-3,.grid-4{grid-template-columns:1fr} }
+    .card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:0 10px 30px rgba(14,165,233,.10), 0 18px 40px rgba(251,113,133,.08);}
+    .card::before,.card::after{content:"";position:absolute;width:var(--corner-size);height:var(--corner-size);border-radius:10px;z-index:1}
+    .card::before{top:-1px;left:-1px;background:linear-gradient(135deg,var(--p-green),var(--p-sky));}
+    .card::after{bottom:-1px;right:-1px;background:linear-gradient(135deg,var(--p-pink),var(--p-amber));}
+    h2.section-title{text-align:center;margin:0 0 18px;position:relative;padding-bottom:10px;font-size:28px}
+    h2.section-title .bar{position:absolute;left:0;right:0;margin:auto;bottom:-2px;height:4px;width:160px;border-radius:999px}
+    .h-green .bar{background:linear-gradient(90deg,var(--p-green),#d1fae5)}
+    .h-sky .bar{background:linear-gradient(90deg,var(--p-sky),#e0f2fe)}
+    .h-pink .bar{background:linear-gradient(90deg,var(--p-pink),#ffe4f1)}
+    .h-amber .bar{background:linear-gradient(90deg,var(--p-amber),#ffedd5)}
+    .h-mix .bar{background:linear-gradient(90deg,var(--p-green),var(--p-sky),var(--p-pink))}
+    .badge{display:inline-block;border:1px solid var(--border);padding:6px 10px;border-radius:999px;margin:6px 6px 0 0;color:#0f172a;font-weight:700;font-size:12px;background:#f8fafc}
     .note{font-size:12px;color:var(--muted);margin-top:8px;max-width:860px;margin-left:auto;margin-right:auto}
+    section{padding:56px 0;border-bottom:1px solid var(--border)}
+    footer{padding:24px 0;color:#64748b}
+    .footer-grid{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:12px}
+    .footer-left{display:flex;gap:10px;justify-self:start}
+    .footer-center{text-align:center;width:100%}
+    .intake-form input, .intake-form select, .intake-form textarea{padding:12px;border-radius:12px;border:1px solid var(--border);background:#fbfdff;color:var(--fg);width:100%}
+    .intake-form fieldset{border:1px solid var(--border);border-radius:12px;padding:12px;background:#ffffff}
+    .intake-form legend{padding:0 6px;color:var(--muted)}
   </style>
 </head>
 <body>
@@ -52,9 +68,9 @@
         <a class="logo" href="#top" aria-label="KJ Business Consulting & Accounting home">
           <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
             <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#22c55e"/><stop offset="60%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#f59e0b"/></linearGradient></defs>
+              <stop offset="0%" stop-color="#bbf7d0"/><stop offset="60%" stop-color="#bae6fd"/><stop offset="100%" stop-color="#fed7aa"/></linearGradient></defs>
             <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#g)"/>
-            <text x="50%" y="52%" text-anchor="middle" dominant-baseline="middle" font-family="Inter, Arial, sans-serif" font-weight="900" font-size="28" fill="#08111e">KJ</text>
+            <text x="50%" y="52%" text-anchor="middle" dominant-baseline="middle" font-family="Inter, Arial, sans-serif" font-weight="900" font-size="28" fill="#1f2937">KJ</text>
           </svg>
           <span>KJ Business Consulting & Accounting</span>
         </a>
@@ -62,9 +78,9 @@
           <a href="#services">Services</a>
           <a href="#operations">Operations</a>
           <a href="#industries">Restaurants</a>
-          <a href="#pricing">Pricing</a>
+          <a href="#pricing">Sample Pricing</a>
           <a href="#about">About</a>
-          <a href="#contact" class="btn book" style="margin-left:8px">Book a Consult</a>
+          <a href="#contact">Contact</a>
         </div>
       </nav>
     </div>
@@ -75,18 +91,18 @@
       <div class="tagline">RESTAURANT‑FOCUSED • FRACTIONAL CONTROLLER</div>
       <div class="hero-ctas">
         <a class="btn book" href="#contact">Book a Consult</a>
-        <a class="btn email email-cta" href="mailto:kjbusinessconsulting%40gmail.com?subject=Consult%20Request%20%E2%80%94%20KJ%20Business%20Consulting&body=Hi%20Katrina%2C%0A%0AMy%20name%20is%20_____.%20Here%E2%80%99s%20what%20I%E2%80%99m%20looking%20for%3A%0A-%20Accounting%20Software%3A%20_____%0A-%20POS%3A%20_____%0A-%20Locations%3A%20_____%0A-%20States%3A%20_____%0A-%20Goals%3A%20_____%0A%0AThanks%21" data-gmail="https://mail.google.com/mail/?view=cm&fs=1&to=kjbusinessconsulting%40gmail.com&su=Consult%20Request%20%E2%80%94%20KJ%20Business%20Consulting&body=Hi%20Katrina%2C%0A%0AMy%20name%20is%20_____.%20Here%E2%80%99s%20what%20I%E2%80%99m%20looking%20for%3A%0A-%20Accounting%20Software%3A%20_____%0A-%20POS%3A%20_____%0A-%20Locations%3A%20_____%0A-%20States%3A%20_____%0A-%20Goals%3A%20_____%0A%0AThanks%21">Email Me</a>
+        <a class="btn email email-cta" href="mailto:kjbusinessconsulting%40gmail.com?subject=Consult%20Request%20%E2%80%94%20KJ%20Business%20Consulting&body=Hi%20Katrina%2C%0A%0AMy%20name%20is%20_____.%20Here%E2%80%99s%20what%20I%E2%80%99m%20looking%20for%3A%0A-%20Accounting%20Software%3A%20_____%0A-%20POS%3A%20_____%0A-%20Locations%3A%20_____%0A-%20States%3A%20_____%0A-%20Services%20Interested%20In%3A%20_____%0A-%20Goals%3A%20_____%0A%0AThanks%21" data-gmail="https://mail.google.com/mail/?view=cm&fs=1&to=kjbusinessconsulting%40gmail.com&su=Consult%20Request%20%E2%80%94%20KJ%20Business%20Consulting&body=Hi%20Katrina%2C%0A%0AMy%20name%20is%20_____.%20Here%E2%80%99s%20what%20I%E2%80%99m%20looking%20for%3A%0A-%20Accounting%20Software%3A%20_____%0A-%20POS%3A%20_____%0A-%20Locations%3A%20_____%0A-%20States%3A%20_____%0A-%20Services%20Interested%20In%3A%20_____%0A-%20Goals%3A%20_____%0A%0AThanks%21">Email Me</a>
       </div>
       <h1>The books can wait. People can’t.<br/>But your numbers still need to be right.</h1>
       <p class="sub">I help multi-location restaurants install bulletproof accounting: weekly P&Ls, disciplined close, COGS and labor control, and board-ready insights.</p>
       <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center">
-        <span class="badge green">Restaurant365</span>
-        <span class="badge sky">Toast</span>
-        <span class="badge amber">7shifts</span>
-        <span class="badge pink">Concur</span>
-        <span class="badge sky">Ramp</span>
-        <span class="badge green">QuickBooks Online</span>
-        <span class="badge amber">QuickBooks Desktop</span>
+        <span class="badge">Restaurant365</span>
+        <span class="badge">Toast</span>
+        <span class="badge">7shifts</span>
+        <span class="badge">Concur</span>
+        <span class="badge">Ramp</span>
+        <span class="badge">QuickBooks Online</span>
+        <span class="badge">QuickBooks Desktop</span>
       </div>
       <div class="note">Need admin access help (bank, cards, portals)? I’ll write the requests and drive approvals.</div>
       <div class="stripe"></div>
@@ -98,7 +114,7 @@
     </section>
 
     <section id="services">
-      <h2 style="text-align:center;position:relative;padding-bottom:6px">Services</h2>
+      <h2 class="section-title h-green">Services<div class="bar"></div></h2>
       <div class="grid-3">
         <div class="card">
           <h3>Fractional Controller</h3>
@@ -129,7 +145,7 @@
     </section>
 
     <section id="operations">
-      <h2 style="text-align:center;position:relative;padding-bottom:6px">Operations Consulting & SOPs</h2>
+      <h2 class="section-title h-sky">Operations Consulting & SOPs<div class="bar"></div></h2>
       <div class="grid-3">
         <div class="card">
           <h3>On‑the‑Floor Ops</h3>
@@ -160,7 +176,7 @@
     </section>
 
     <section id="industries">
-      <h2 style="text-align:center;position:relative;padding-bottom:6px">Who I Serve</h2>
+      <h2 class="section-title h-amber">Who I Serve<div class="bar"></div></h2>
       <div class="grid-4">
         <div class="card"><h3>Multi-Unit Operators</h3><p>Central reporting, location scorecards, and accountability.</p></div>
         <div class="card"><h3>Founders & New CFOs</h3><p>Gain control quickly with a zero-fluff reporting pack.</p></div>
@@ -170,7 +186,7 @@
     </section>
 
     <section>
-      <h2 style="text-align:center;position:relative;padding-bottom:6px">What Clients Say</h2>
+      <h2 class="section-title h-pink">What Clients Say<div class="bar"></div></h2>
       <div class="grid-3">
         <div class="card"><blockquote>“Katrina led our expansion from 12 to 40+ units without losing the narrative in the numbers. Close is faster and cleaner.” — <em>VP Finance, multi-unit fast-casual</em></blockquote></div>
         <div class="card"><blockquote>“We finally trust our weekly P&Ls. MPs actually use them in standups now.” — <em>Area Director, Southeast</em></blockquote></div>
@@ -180,7 +196,7 @@
     </section>
 
     <section id="pricing">
-      <h2 style="text-align:center;position:relative;padding-bottom:6px">Simple Pricing</h2>
+      <h2 class="section-title h-mix">Sample Pricing<div class="bar"></div></h2>
       <div class="grid-3">
         <div class="card">
           <h3>Starter</h3>
@@ -201,7 +217,7 @@
     </section>
 
     <section id="about">
-      <h2 style="text-align:center;position:relative;padding-bottom:6px">About Katrina Jaensch</h2>
+      <h2 class="section-title h-green">About Katrina Jaensch<div class="bar"></div></h2>
       <div class="grid-3">
         <div class="card"><h3>Operator-Grade Accounting</h3><p>I’ve led accounting for multi-unit restaurants and built processes teams actually follow.</p></div>
         <div class="card"><h3>Process & People</h3><p>Templates, SOPs, and training so your team owns the numbers—without heroics.</p></div>
@@ -210,14 +226,14 @@
     </section>
 
     <section id="contact">
-      <h2 style="text-align:center;position:relative;padding-bottom:6px">Contact</h2>
+      <h2 class="section-title h-sky">Contact<div class="bar"></div></h2>
       <div style="text-align:center;max-width:720px;margin:0 auto">
-        <p><strong>Email:</strong> <a class="email-cta" href="mailto:kjbusinessconsulting%40gmail.com?subject=Consult%20Request%20%E2%80%94%20KJ%20Business%20Consulting&body=Hi%20Katrina%2C%0A%0AMy%20name%20is%20_____.%20Here%E2%80%99s%20what%20I%E2%80%99m%20looking%20for%3A%0A-%20Accounting%20Software%3A%20_____%0A-%20POS%3A%20_____%0A-%20Locations%3A%20_____%0A-%20States%3A%20_____%0A-%20Goals%3A%20_____%0A%0AThanks%21" data-gmail="https://mail.google.com/mail/?view=cm&fs=1&to=kjbusinessconsulting%40gmail.com&su=Consult%20Request%20%E2%80%94%20KJ%20Business%20Consulting&body=Hi%20Katrina%2C%0A%0AMy%20name%20is%20_____.%20Here%E2%80%99s%20what%20I%E2%80%99m%20looking%20for%3A%0A-%20Accounting%20Software%3A%20_____%0A-%20POS%3A%20_____%0A-%20Locations%3A%20_____%0A-%20States%3A%20_____%0A-%20Goals%3A%20_____%0A%0AThanks%21">kjbusinessconsulting@gmail.com</a></p>
+        <p><strong>Email:</strong> <a class="email-cta" href="mailto:kjbusinessconsulting%40gmail.com?subject=Consult%20Request%20%E2%80%94%20KJ%20Business%20Consulting&body=Hi%20Katrina%2C%0A%0AMy%20name%20is%20_____.%20Here%E2%80%99s%20what%20I%E2%80%99m%20looking%20for%3A%0A-%20Accounting%20Software%3A%20_____%0A-%20POS%3A%20_____%0A-%20Locations%3A%20_____%0A-%20States%3A%20_____%0A-%20Services%20Interested%20In%3A%20_____%0A-%20Goals%3A%20_____%0A%0AThanks%21" data-gmail="https://mail.google.com/mail/?view=cm&fs=1&to=kjbusinessconsulting%40gmail.com&su=Consult%20Request%20%E2%80%94%20KJ%20Business%20Consulting&body=Hi%20Katrina%2C%0A%0AMy%20name%20is%20_____.%20Here%E2%80%99s%20what%20I%E2%80%99m%20looking%20for%3A%0A-%20Accounting%20Software%3A%20_____%0A-%20POS%3A%20_____%0A-%20Locations%3A%20_____%0A-%20States%3A%20_____%0A-%20Services%20Interested%20In%3A%20_____%0A-%20Goals%3A%20_____%0A%0AThanks%21">kjbusinessconsulting@gmail.com</a></p>
         <p><strong>Phone:</strong> <a href="tel:+13523542291">352-354-2291</a></p>
         <p class="note">Prefer email? Click above to open a prefilled message. Or use the intake form below.</p>
       </div>
       <div class="stripe"></div>
-      <h2 style="text-align:center;position:relative;padding-bottom:6px">Intake Form</h2>
+      <h2 class="section-title h-amber">Intake Form<div class="bar"></div></h2>
       <form action="https://formspree.io/f/xrbawnvv" method="POST" class="intake-form" style="display:grid;gap:14px;max-width:640px;margin:18px auto;text-align:left">
         <label>Accounting Software
           <select name="Accounting Software" required>
@@ -274,12 +290,11 @@
   <footer>
     <div class="container">
       <div class="footer-grid">
-        <div></div>
-        <div style="text-align:center">© <span id="year"></span> KJ Business Consulting & Accounting • All rights reserved</div>
-        <div class="footer-right">
-          <a class="btn email email-cta" href="mailto:kjbusinessconsulting%40gmail.com?subject=Consult%20Request%20%E2%80%94%20KJ%20Business%20Consulting&body=Hi%20Katrina%2C%0A%0AMy%20name%20is%20_____.%20Here%E2%80%99s%20what%20I%E2%80%99m%20looking%20for%3A%0A-%20Accounting%20Software%3A%20_____%0A-%20POS%3A%20_____%0A-%20Locations%3A%20_____%0A-%20States%3A%20_____%0A-%20Goals%3A%20_____%0A%0AThanks%21" data-gmail="https://mail.google.com/mail/?view=cm&fs=1&to=kjbusinessconsulting%40gmail.com&su=Consult%20Request%20%E2%80%94%20KJ%20Business%20Consulting&body=Hi%20Katrina%2C%0A%0AMy%20name%20is%20_____.%20Here%E2%80%99s%20what%20I%E2%80%99m%20looking%20for%3A%0A-%20Accounting%20Software%3A%20_____%0A-%20POS%3A%20_____%0A-%20Locations%3A%20_____%0A-%20States%3A%20_____%0A-%20Goals%3A%20_____%0A%0AThanks%21">Email Me</a>
+        <div class="footer-left">
+          <a class="btn email email-cta" href="mailto:kjbusinessconsulting%40gmail.com?subject=Consult%20Request%20%E2%80%94%20KJ%20Business%20Consulting&body=Hi%20Katrina%2C%0A%0AMy%20name%20is%20_____.%20Here%E2%80%99s%20what%20I%E2%80%99m%20looking%20for%3A%0A-%20Accounting%20Software%3A%20_____%0A-%20POS%3A%20_____%0A-%20Locations%3A%20_____%0A-%20States%3A%20_____%0A-%20Services%20Interested%20In%3A%20_____%0A-%20Goals%3A%20_____%0A%0AThanks%21" data-gmail="https://mail.google.com/mail/?view=cm&fs=1&to=kjbusinessconsulting%40gmail.com&su=Consult%20Request%20%E2%80%94%20KJ%20Business%20Consulting&body=Hi%20Katrina%2C%0A%0AMy%20name%20is%20_____.%20Here%E2%80%99s%20what%20I%E2%80%99m%20looking%20for%3A%0A-%20Accounting%20Software%3A%20_____%0A-%20POS%3A%20_____%0A-%20Locations%3A%20_____%0A-%20States%3A%20_____%0A-%20Services%20Interested%20In%3A%20_____%0A-%20Goals%3A%20_____%0A%0AThanks%21">Email Me</a>
           <a class="btn book" href="#contact">Book a Consult</a>
         </div>
+        <div class="footer-center">© <span id="year"></span> KJ Business Consulting & Accounting • All rights reserved</div>
       </div>
     </div>
   </footer>
@@ -289,7 +304,7 @@
     function smartEmail(link) {
       const mailto = link.getAttribute('href');
       const gmail = link.dataset.gmail;
-      try { window.location.href = mailto; } catch(e) { }
+      try { window.location.href = mailto; } catch(e) {}
       setTimeout(() => { try { window.open(gmail, '_blank', 'noopener'); } catch(e) {} }, 600);
     }
     document.querySelectorAll('.email-cta').forEach(a => a.addEventListener('click', e => smartEmail(a)));
